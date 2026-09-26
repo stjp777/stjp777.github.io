@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" data-theme="paper">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steve Nguyen</title>
+  <meta name="description" content="Steve Nguyen, computer science student at Cal Poly Pomona. Projects in Python, Flask, and AI agents.">
+  <meta property="og:title" content="Steve Nguyen">
+  <meta property="og:description" content="CS student at Cal Poly Pomona who builds tools that do the boring part.">
+  <meta property="og:url" content="https://stjp777.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://stjp777.github.io/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F3EFE9">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // Set the theme before first paint so there is no flash.
+    (function () {
+      var t;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'paper' && t !== 'rust' && t !== 'night') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'paper';
+      }
+      document.documentElement.dataset.theme = t;
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css?v=11">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 256 256"><path fill="currentColor" d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.690,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.650A41.72,41.72,0,0,1,200,104Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 256 256"><path fill="currentColor" d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.780A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></symbol>
+    <symbol id="i-google" viewBox="0 0 256 256"><path fill="currentColor" d="M224,128a96,96,0,1,1-21.95-61.09,8,8,0,1,1-12.33,10.18A80,80,0,1,0,207.6,136H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128Z"/></symbol>
+    <symbol id="i-outlook" viewBox="0 0 256 256"><path fill="currentColor" d="M120,128a32,32,0,1,0-32,32A32,32,0,0,0,120,128Zm-48,0a16,16,0,1,1,16,16A16,16,0,0,1,72,128Zm152-24H208V40a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V64H40A16,16,0,0,0,24,80v96a16,16,0,0,0,16,16H72v16a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V112A8,8,0,0,0,224,104Zm-58.34,60L216,127.65v72.7ZM112,48h80v77.24l-40,28.89V80a16,16,0,0,0-16-16H112ZM40,80h96v77.9c0,.12,0,.24,0,.36V176H40ZM88,192h48a16,16,0,0,0,16-16v-2.13L199.26,208H88Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 256 256"><path fill="currentColor" d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol>
+    <symbol id="i-up" viewBox="0 0 256 256"><path fill="currentColor" d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></symbol>
+  </svg>
+  <div class="progress" aria-hidden="true"></div>
+  <a class="skip" href="#top">Skip to content</a>
+
+  <header class="nav wrap">
+    <a class="logo" href="#top" aria-label="Steve Nguyen, back to top">
+      <svg viewBox="0 0 48 44" width="34" height="31" aria-hidden="true">
+        <path class="fox-body" d="M6 4 L16 16 Q24 13 32 16 L42 4 L42 20 Q42 34 24 40 Q6 34 6 20 Z"/>
+        <path class="fox-line" d="M9 20 Q18 25 24 35 Q30 25 39 20"/>
+        <g class="blink"><circle class="fox-dot" cx="17" cy="23" r="1.8"/><circle class="fox-dot" cx="31" cy="23" r="1.8"/></g>
+        <ellipse class="fox-dot" cx="24" cy="34.5" rx="2.2" ry="1.6"/>
+      </svg>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="switcher" role="group" aria-label="Color theme">
+      <button type="button" data-set-theme="paper" aria-label="Paper theme"></button>
+      <button type="button" data-set-theme="rust" aria-label="Fox rust theme"></button>
+      <button type="button" data-set-theme="night" aria-label="Night theme"></button>
+    </div>
+  </header>
+
+  <main id="top" tabindex="-1">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="status"><span class="status-dot" aria-hidden="true"></span><span><span class="greeting"></span>I’m currently looking for Summer 2027 Internships</span></p>
+        <h1>Steve Nguyen</h1>
+        <p class="lede">CS student at Cal Poly Pomona who builds tools that do the boring part, like catching internships the day they post.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=phuc.h0168094@gmail.com" target="_blank" rel="noopener" data-email>Email</a>
+          <a class="btn" href="assets/steve-nguyen-resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a class="btn" href="https://github.com/stjp777" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider wrap" aria-hidden="true">
+      <span class="rule"></span>
+      <svg class="critter fox" viewBox="0 0 48 44" width="44" height="40">
+        <path class="fox-body" d="M6 4 L16 16 Q24 13 32 16 L42 4 L42 20 Q42 34 24 40 Q6 34 6 20 Z"/>
+        <path class="fox-line" d="M9 20 Q18 25 24 35 Q30 25 39 20 M10 9 L14.5 15.5 M38 9 L33.5 15.5"/>
+        <g class="blink"><circle class="fox-dot" cx="17" cy="23" r="1.6"/><circle class="fox-dot" cx="31" cy="23" r="1.6"/></g>
+        <ellipse class="fox-dot" cx="24" cy="34.5" rx="2.2" ry="1.6"/>
+      </svg>
+      <svg class="critter cat" viewBox="0 0 48 44" width="44" height="40">
+        <path class="cat-body" d="M7 5 L16 14 Q24 11 32 14 L41 5 L42 23 Q42 39 24 39 Q6 39 6 23 Z"/>
+        <g class="blink"><circle class="cat-dot" cx="17" cy="23" r="2"/><circle class="cat-dot" cx="31" cy="23" r="2"/></g>
+        <path class="cat-line" d="M21 29 Q22.5 31 24 29 Q25.5 31 27 29 M3 26 L12 27 M3 30 L12 29 M45 26 L36 27 M45 30 L36 29"/>
+      </svg>
+    </div>
+
+    <section id="projects" class="projects wrap">
+      <h2 class="reveal">Projects</h2>
+
+      <article class="card featured reveal">
+        <div class="featured-copy">
+          <h3>Internship Tracker</h3>
+          <p>Pulls postings from 9+ companies’ public APIs, reads LinkedIn and Indeed alerts through Gmail, and pings Discord when something new matches.</p>
+          <ul class="stack" translate="no" aria-label="Built with">
+            <li>Python</li><li>Flask</li><li>SQLite</li><li>Gmail API</li><li>GitHub Actions</li>
+          </ul>
+          <p class="card-links">
+            <a href="https://stjp777.github.io/internship-tracker/" target="_blank" rel="noopener">Live dashboard <span class="arw" aria-hidden="true">→</span></a>
+            <a href="https://github.com/stjp777/internship-tracker" target="_blank" rel="noopener">Code <span class="arw" aria-hidden="true">→</span></a>
+          </p>
+        </div>
+        <a class="shot" href="https://stjp777.github.io/internship-tracker/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="assets/internship-tracker.webp" alt="" width="885" height="660" loading="lazy">
+        </a>
+      </article>
+
+      <div class="row">
+        <article class="card reveal">
+          <h3>Python AI Coding Agent</h3>
+          <p>Reads files, writes code, runs it, and checks its own output in a tool-calling loop with Gemini.</p>
+          <pre class="code" translate="no" aria-label="The four tools the agent can call"><code>tools = [
+    get_files_info,
+    get_file_content,
+    write_file,
+    run_python_file,
+]</code></pre>
+          <ul class="stack" translate="no" aria-label="Built with"><li>Python</li><li>Gemini API</li></ul>
+          <p class="card-links"><a href="https://github.com/stjp777/python-ai-agent" target="_blank" rel="noopener">Code <span class="arw" aria-hidden="true">→</span></a></p>
+        </article>
+
+        <article class="card inverse reveal">
+          <h3>DataOwls</h3>
+          <p>Team project. Upload a CSV, turn it into charts, publish it as a story. Now moving the prototype to React and Express.</p>
+          <ul class="stack" translate="no" aria-label="Built with"><li>React</li><li>Node.js</li><li>Express</li></ul>
+          <p class="card-links push"><a href="https://github.com/portilloadrian/DataOwl" target="_blank" rel="noopener">Code <span class="arw" aria-hidden="true">→</span></a></p>
+        </article>
+      </div>
+
+      <p class="also reveal">Also built: an <a href="https://github.com/stjp777/asteroid" target="_blank" rel="noopener">Asteroids clone in Pygame</a>, and a steady log of <a href="https://github.com/stjp777/neetcode-submissions" target="_blank" rel="noopener">NeetCode solutions</a>.</p>
+    </section>
+
+    <section id="about" class="about wrap">
+      <h2 class="reveal">About</h2>
+      <div class="cols">
+        <div class="col reveal">
+          <h3 class="col-head">Education</h3>
+          <p class="lead">B.S. Computer Science, Cal Poly Pomona</p>
+          <p>2025 to present. GPA 3.87.</p>
+          <p>Data Structures and Algorithms, Discrete Math, Calculus, Intro to Web Science.</p>
+        </div>
+        <div class="col reveal">
+          <h3 class="col-head">Skills</h3>
+          <p class="lead">Python, Java, JavaScript, HTML, CSS</p>
+          <p>Flask, requests</p>
+          <p>Git, GitHub Actions, SQLite, Gmail API</p>
+        </div>
+        <div class="col reveal">
+          <h3 class="col-head">Work</h3>
+          <p class="lead">Server at Pho N Mor</p>
+          <p>Chino Hills, 2025 to present.</p>
+          <p>Runs service for 100+ diners at peak and trains new hires.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-copy">
+        <h2 class="reveal">Contact me</h2>
+        <p class="contact-note reveal">Open to Summer Internships.</p>
+      </div>
+      <figure class="contact-figure reveal">
+        <img class="contact-photo" src="assets/fox-and-cat.webp" alt="A plush fox and a black cat figurine on my desk" width="960" height="960" loading="lazy">
+        <details class="egg">
+          <summary>Why a fox and a cat?</summary>
+          <p>These two live on my desk and keep me company while I code, so they became the site's mascots. The themes come from them too: paper and ink from the black cat, rust from the fox's fur, and night for the late sessions. Try switching themes and watch the fox and cat hop, or move your mouse near the cat down here.</p>
+        </details>
+      </figure>
+    </div>
+
+    <div class="wrap sign-off reveal">
+      <span class="footer-name">Steve Nguyen</span>
+      <button class="email-copy" type="button" data-copy-email aria-label="Copy email address phuc.h0168094@gmail.com"><span class="email-text">phuc.h0168094@gmail.com</span><span class="email-done" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Copied</span></button>
+      <ul class="footer-links">
+        <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=phuc.h0168094@gmail.com" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-google"/></svg>Gmail</a></li>
+        <li><a href="https://outlook.live.com/mail/0/deeplink/compose?to=stevenguyen07@outlook.com" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-outlook"/></svg>Outlook</a></li>
+        <li><a href="https://github.com/stjp777" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/steve-nguyen-b52b353a7/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+      </ul>
+      <small>© 2026</small>
+    </div>
+
+    <svg class="peek" viewBox="0 0 48 30" width="112" height="70" aria-hidden="true">
+      <path class="cat-body" d="M7 5 L16 14 Q24 11 32 14 L41 5 L42 23 Q42 39 24 39 Q6 39 6 23 Z"/>
+      <g class="pupils"><circle class="cat-dot" cx="17" cy="23" r="2"/><circle class="cat-dot" cx="31" cy="23" r="2"/></g>
+      <path class="cat-line" d="M21 29 Q22.5 31 24 29 Q25.5 31 27 29 M3 26 L12 27 M3 30 L12 29 M45 26 L36 27 M45 30 L36 29"/>
+    </svg>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Back to top"><svg class="ico" aria-hidden="true"><use href="#i-up"/></svg></button>
+  <p class="toast" role="status" aria-live="polite"></p>
+
+  <script src="main.js?v=10" defer></script>
+</body>
+</html>
