@@ -6,7 +6,7 @@
   <title>Steve Nguyen</title>
   <meta name="description" content="Steve Nguyen, computer science student at Cal Poly Pomona. Projects in Python, Flask, and AI agents.">
   <meta property="og:title" content="Steve Nguyen">
-  <meta property="og:description" content="CS student at Cal Poly Pomona who builds tools that do the boring part.">
+  <meta property="og:description" content="Useful things, thoughtfully built. CS student at Cal Poly Pomona.">
   <meta property="og:url" content="https://stjp777.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://stjp777.github.io/assets/og.jpg">
@@ -16,6 +16,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
   <script>
     // Set the theme before first paint so there is no flash.
     (function () {
@@ -28,7 +29,7 @@
       document.documentElement.classList.add('js');
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=22">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -37,168 +38,254 @@
     <symbol id="i-google" viewBox="0 0 256 256"><path fill="currentColor" d="M224,128a96,96,0,1,1-21.95-61.09,8,8,0,1,1-12.33,10.18A80,80,0,1,0,207.6,136H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128Z"/></symbol>
     <symbol id="i-outlook" viewBox="0 0 256 256"><path fill="currentColor" d="M120,128a32,32,0,1,0-32,32A32,32,0,0,0,120,128Zm-48,0a16,16,0,1,1,16,16A16,16,0,0,1,72,128Zm152-24H208V40a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8V64H40A16,16,0,0,0,24,80v96a16,16,0,0,0,16,16H72v16a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V112A8,8,0,0,0,224,104Zm-58.34,60L216,127.65v72.7ZM112,48h80v77.24l-40,28.89V80a16,16,0,0,0-16-16H112ZM40,80h96v77.9c0,.12,0,.24,0,.36V176H40ZM88,192h48a16,16,0,0,0,16-16v-2.13L199.26,208H88Z"/></symbol>
     <symbol id="i-check" viewBox="0 0 256 256"><path fill="currentColor" d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 256 256"><path fill="currentColor" d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol>
     <symbol id="i-up" viewBox="0 0 256 256"><path fill="currentColor" d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></symbol>
   </svg>
-  <div class="progress" aria-hidden="true"></div>
   <a class="skip" href="#top">Skip to content</a>
 
-  <header class="nav wrap">
-    <a class="logo" href="#top" aria-label="Steve Nguyen, back to top">
-      <svg viewBox="0 0 48 44" width="34" height="31" aria-hidden="true">
-        <path class="fox-body" d="M6 4 L16 16 Q24 13 32 16 L42 4 L42 20 Q42 34 24 40 Q6 34 6 20 Z"/>
-        <path class="fox-line" d="M9 20 Q18 25 24 35 Q30 25 39 20"/>
-        <g class="blink"><circle class="fox-dot" cx="17" cy="23" r="1.8"/><circle class="fox-dot" cx="31" cy="23" r="1.8"/></g>
-        <ellipse class="fox-dot" cx="24" cy="34.5" rx="2.2" ry="1.6"/>
-      </svg>
-    </a>
-    <nav class="links" aria-label="Sections">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="switcher" role="group" aria-label="Color theme">
-      <button type="button" data-set-theme="paper" aria-label="Paper theme"></button>
-      <button type="button" data-set-theme="rust" aria-label="Fox rust theme"></button>
-      <button type="button" data-set-theme="night" aria-label="Night theme"></button>
+  <header class="site-header">
+    <div class="nav wrap">
+      <a class="logo" href="#top" aria-label="Steve Nguyen, back to top">
+        <svg viewBox="0 0 48 44" width="32" height="29" aria-hidden="true">
+          <path class="fox-body" d="M6 4 L16 16 Q24 13 32 16 L42 4 L42 20 Q42 34 24 40 Q6 34 6 20 Z"/>
+          <path class="fox-line" d="M9 20 Q18 25 24 35 Q30 25 39 20"/>
+          <g class="blink"><circle class="fox-dot" cx="17" cy="23" r="1.8"/><circle class="fox-dot" cx="31" cy="23" r="1.8"/></g>
+          <ellipse class="fox-dot" cx="24" cy="34.5" rx="2.2" ry="1.6"/>
+        </svg>
+      </a>
+      <nav class="links" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="switcher" role="group" aria-label="Color theme">
+        <button type="button" data-set-theme="paper" aria-label="Paper theme"></button>
+        <button type="button" data-set-theme="rust" aria-label="Fox rust theme"></button>
+        <button type="button" data-set-theme="night" aria-label="Forest night theme"></button>
+      </div>
     </div>
+    <!-- The header's bottom line doubles as the scroll progress bar -->
+    <div class="progress" aria-hidden="true"></div>
   </header>
 
   <main id="top" tabindex="-1">
     <section class="hero wrap">
       <div class="hero-copy">
-        <p class="status"><span class="status-dot" aria-hidden="true"></span><span><span class="greeting"></span>I’m currently looking for Summer 2027 Internships</span></p>
-        <h1>Steve Nguyen</h1>
-        <p class="lede">CS student at Cal Poly Pomona who builds tools that do the boring part, like catching internships the day they post.</p>
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Computer Science @ Cal Poly Pomona</p>
+        <h1>Steve Nguyen<span class="pop" aria-hidden="true">.</span></h1>
+        <p class="tagline">Useful things. Thoughtfully built.</p>
+        <p class="lede">I build tools that do the boring part, from finding internships to turning data into something you can actually use.</p>
         <div class="ctas">
-          <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=phuc.h0168094@gmail.com" target="_blank" rel="noopener" data-email>Email</a>
-          <a class="btn" href="assets/steve-nguyen-resume.pdf?v=2" target="_blank" rel="noopener">Resume</a>
-          <a class="btn" href="https://github.com/stjp777" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-primary" href="#work">Explore my work <span class="arw-down" aria-hidden="true">↓</span></a>
+          <a class="btn" href="assets/steve-nguyen-resume.pdf?v=2" target="_blank" rel="noopener">Résumé <span class="arw" aria-hidden="true">↗</span></a>
         </div>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span><span><span class="greeting"></span>I’m currently looking for Summer 2027 Internships</span></p>
       </div>
+
+      <figure class="workbench" aria-label="Illustration of a fox and a cat at a laptop running the code: while curious, build, learn, repeat">
+        <div class="workbench-top"><span class="kicker-plain">The workbench</span><span class="spark" aria-hidden="true">✳</span></div>
+        <svg class="workbench-art" viewBox="0 0 320 210" fill="none" aria-hidden="true">
+          <ellipse class="wb-shadow" cx="165" cy="187" rx="140" ry="9"/>
+          <!-- laptop -->
+          <path class="wb-screen" d="M39 48q0-8 8-8h205q8 0 8 8v125H39Z"/>
+          <path class="wb-rule" d="M40 59h219"/>
+          <circle cx="50" cy="49" r="2" fill="#b46847"/><circle class="wb-dot2" cx="58" cy="49" r="2"/><circle class="wb-dot3" cx="66" cy="49" r="2"/>
+          <rect class="wb-code" x="54" y="72" width="166" height="86" rx="5"/>
+          <text class="wb-kw" x="68" y="94">while curious:</text>
+          <text class="wb-fn" x="82" y="112">build()</text>
+          <text class="wb-fn" x="82" y="129">learn()</text>
+          <text class="wb-fn" x="82" y="146">repeat()</text>
+          <path class="wb-base" d="m39 173-15 12q-3 4 4 4h243q7 0 3-4l-14-12Z"/>
+          <path class="wb-pad" d="M123 174h53l4 7h-62Z"/>
+          <!-- cat, sitting on the left and watching the screen -->
+          <g class="wb-cat">
+            <path class="wb-cat-tail" d="M14 181C1 180-2 165 7 158"/>
+            <path class="wb-cat-body" d="M20 187C8 187 5 170 11 155 15 144 25 138 34 140 46 143 52 157 50 173 49 181 48 187 44 187Z"/>
+            <path class="wb-cat-body" d="M21 127 20 106 31 115Q37 113 43 115L54 106 53 127Q53 142 37 142 21 142 21 127Z"/>
+            <path class="wb-cat-ink" d="M27 127q3.5-3.5 7 0M40 127q3.5-3.5 7 0M35.500 133.5q1.500 1.500 3 0"/>
+          </g>
+          <!-- fox, curled up on the right -->
+          <path d="M193 172c-8-18-1-37 12-47l-4-26 20 11 23-7 13-23 8 32c17 9 24 29 13 44-4 8-9 13-14 17Z" fill="#b96a46" stroke="#714b37" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="m204 109 13 8-11 7Zm43 4 11-18 2 24Z" fill="#e2aa80"/>
+          <path d="m209 135 24 11 31-20c-1 19-11 29-25 30-11-1-22-8-30-21Z" fill="#f6e9ce"/>
+          <path d="m229 143 7 1-3 5Z" fill="#503d30"/>
+          <path d="m215 129 6 2m24-5 6-3" stroke="#503d30" stroke-width="2" stroke-linecap="round"/>
+          <path d="M251 159c34-32 55-21 50-3-4 14-29 25-58 24-24 0-44-3-49-10-5-10 14-15 27-12" fill="#c98055" stroke="#714b37" stroke-width="1.5"/>
+          <path d="M281 144c14-5 23 2 20 12-1 4-5 8-11 12-8-4-12-12-9-24Z" fill="#f6e9ce"/>
+          <path class="wb-spark" d="m70 25 3-7m-17 17-7-1M277 56l3 6m-15-14 5-2"/>
+        </svg>
+        <figcaption>A little curiosity goes a long way.</figcaption>
+      </figure>
     </section>
 
     <div class="divider wrap" aria-hidden="true">
       <span class="rule"></span>
-      <svg class="critter fox" viewBox="0 0 48 44" width="44" height="40">
+      <svg class="critter fox" viewBox="0 0 48 44" width="40" height="37">
         <path class="fox-body" d="M6 4 L16 16 Q24 13 32 16 L42 4 L42 20 Q42 34 24 40 Q6 34 6 20 Z"/>
         <path class="fox-line" d="M9 20 Q18 25 24 35 Q30 25 39 20 M10 9 L14.5 15.5 M38 9 L33.5 15.5"/>
         <g class="blink"><circle class="fox-dot" cx="17" cy="23" r="1.6"/><circle class="fox-dot" cx="31" cy="23" r="1.6"/></g>
         <ellipse class="fox-dot" cx="24" cy="34.5" rx="2.2" ry="1.6"/>
       </svg>
-      <svg class="critter cat" viewBox="0 0 48 44" width="44" height="40">
+      <svg class="critter cat" viewBox="0 0 48 44" width="40" height="37">
         <path class="cat-body" d="M7 5 L16 14 Q24 11 32 14 L41 5 L42 23 Q42 39 24 39 Q6 39 6 23 Z"/>
         <g class="blink"><circle class="cat-dot" cx="17" cy="23" r="2"/><circle class="cat-dot" cx="31" cy="23" r="2"/></g>
         <path class="cat-line" d="M21 29 Q22.5 31 24 29 Q25.5 31 27 29 M3 26 L12 27 M3 30 L12 29 M45 26 L36 27 M45 30 L36 29"/>
       </svg>
     </div>
 
-    <section id="projects" class="projects wrap">
-      <h2 class="reveal">Projects</h2>
+    <section id="work" class="work wrap" aria-labelledby="work-title">
+      <div class="section-head reveal">
+        <span class="kicker">01 / Selected work</span>
+        <h2 id="work-title" class="title">Built to be useful.</h2>
+      </div>
 
       <article class="card featured reveal">
         <div class="featured-copy">
+          <p class="label"><span aria-hidden="true">✳</span> Featured project</p>
           <h3>Internship Tracker</h3>
-          <p>Pulls postings from 9+ companies’ public APIs, reads LinkedIn and Indeed alerts through Gmail, and pings Discord when something new matches.</p>
+          <p>Less refreshing job boards. More finding the right opportunity. A tracker that brings new postings and relevant alerts into one place.</p>
           <ul class="stack" translate="no" aria-label="Built with">
             <li>Python</li><li>Flask</li><li>SQLite</li><li>Gmail API</li><li>GitHub Actions</li>
           </ul>
           <p class="card-links">
-            <a href="https://stjp777.github.io/internship-tracker/" target="_blank" rel="noopener">Live dashboard <span class="arw" aria-hidden="true">→</span></a>
-            <a href="https://github.com/stjp777/internship-tracker" target="_blank" rel="noopener">Code <span class="arw" aria-hidden="true">→</span></a>
+            <a href="https://stjp777.github.io/internship-tracker/" target="_blank" rel="noopener">Live dashboard <span class="arw" aria-hidden="true">↗</span></a>
+            <a href="https://github.com/stjp777/internship-tracker" target="_blank" rel="noopener">Source code <span class="arw" aria-hidden="true">↗</span></a>
           </p>
+          <details class="more">
+            <summary>What happens behind the scenes?</summary>
+            <ul>
+              <li>Collects postings from 9+ company career sources through their public APIs.</li>
+              <li>Reads LinkedIn and Indeed email alerts using the Gmail API.</li>
+              <li>Checks every 30 minutes with GitHub Actions and sends new matches to Discord.</li>
+            </ul>
+          </details>
         </div>
-        <a class="shot" href="https://stjp777.github.io/internship-tracker/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-          <img src="assets/internship-tracker.webp" alt="" width="885" height="660" loading="lazy">
-        </a>
+        <div class="featured-shot">
+          <a class="frame" href="https://stjp777.github.io/internship-tracker/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <span class="frame-bar"><i></i><i></i><i></i><span class="frame-url" translate="no">stjp777.github.io/internship-tracker</span></span>
+            <img src="assets/internship-tracker.webp" alt="" width="885" height="660" loading="lazy">
+          </a>
+          <p class="shot-note">The live dashboard, updated every 30 minutes</p>
+        </div>
       </article>
 
       <div class="row">
         <article class="card reveal">
+          <div class="art art-agent" translate="no" aria-label="Diagram: a prompt goes to Gemini, which loops through inspect, act and observe using four tools">
+            <div class="agent-loop"><strong>prompt</strong> → <span>Gemini</span><br>inspect · act · observe<br><span>↺ inspect output</span></div>
+            <span class="art-arrow" aria-hidden="true">→</span>
+            <div class="agent-tools"><div>get_files_info</div><div>get_file_content</div><div>write_file</div><div>run_python_file</div></div>
+          </div>
           <h3>Python AI Coding Agent</h3>
-          <p>Reads files, writes code, runs it, and checks its own output in a tool-calling loop with Gemini.</p>
-          <pre class="code" translate="no" aria-label="The four tools the agent can call"><code>tools = [
-    get_files_info,
-    get_file_content,
-    write_file,
-    run_python_file,
-]</code></pre>
-          <ul class="stack" translate="no" aria-label="Built with"><li>Python</li><li>Gemini API</li></ul>
-          <p class="card-links"><a href="https://github.com/stjp777/python-ai-agent" target="_blank" rel="noopener">Code <span class="arw" aria-hidden="true">→</span></a></p>
+          <p>A hands-on look at how an AI agent works: give it a prompt, connect it to tools, and let it work through a coding task.</p>
+          <ul class="stack" translate="no" aria-label="Built with"><li>Python</li><li>Gemini API</li><li>Tool calling</li></ul>
+          <p class="card-links push"><a href="https://github.com/stjp777/python-ai-agent" target="_blank" rel="noopener">Source code <span class="arw" aria-hidden="true">↗</span></a></p>
+          <details class="more">
+            <summary>Inside the agent loop</summary>
+            <p>The Gemini loop inspects, reads, and writes files and runs Python through four dedicated tools, then checks its own output before it stops.</p>
+          </details>
         </article>
 
-        <article class="card inverse reveal">
-          <h3>DataOwls</h3>
-          <p>Team project. Upload a CSV, turn it into charts, publish it as a story. Now moving the prototype to React and Express.</p>
+        <article class="card reveal">
+          <div class="art art-data" aria-label="Illustration of a CSV table becoming a bar chart">
+            <div class="csv">
+              <div class="csv-name" translate="no">your-data.csv</div>
+              <div class="csv-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <span class="art-arrow" aria-hidden="true">→</span>
+            <div class="bars" aria-hidden="true"><i style="height:37%"></i><i style="height:68%"></i><i style="height:52%"></i><i style="height:87%"></i><i style="height:72%"></i></div>
+            <span class="art-note">Illustrative data</span>
+          </div>
+          <h3>DataOwls <span class="tag-inline">In development</span></h3>
+          <p>A team project exploring how CSV files could become charts and readable stories. Currently migrating the static prototype to React and Express.</p>
           <ul class="stack" translate="no" aria-label="Built with"><li>React</li><li>Node.js</li><li>Express</li></ul>
-          <p class="card-links push"><a href="https://github.com/portilloadrian/DataOwl" target="_blank" rel="noopener">Code <span class="arw" aria-hidden="true">→</span></a></p>
+          <p class="card-links push"><a href="https://github.com/portilloadrian/DataOwl" target="_blank" rel="noopener">Source code <span class="arw" aria-hidden="true">↗</span></a></p>
+          <details class="more">
+            <summary>Where the project is headed</summary>
+            <p>The team is migrating a static HTML/CSS prototype to React and Express. CSV analysis, charts, and stories are planned features.</p>
+          </details>
         </article>
       </div>
 
-      <p class="also reveal">Also built: an <a href="https://github.com/stjp777/asteroid" target="_blank" rel="noopener">Asteroids clone in Pygame</a>, and a steady log of <a href="https://github.com/stjp777/neetcode-submissions" target="_blank" rel="noopener">NeetCode solutions</a>.</p>
+      <p class="bench reveal">
+        <span>Also on my workbench</span>
+        <a class="btn btn-small" href="https://github.com/stjp777" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>My GitHub <span class="arw" aria-hidden="true">↗</span></a>
+      </p>
     </section>
 
-    <section id="about" class="about wrap">
-      <h2 class="reveal">About</h2>
-      <div class="cols">
-        <div class="col reveal">
-          <h3 class="col-head">Education</h3>
-          <p class="lead">B.S. Computer Science, Cal Poly Pomona</p>
-          <p>2025 to present. GPA 3.87.</p>
-          <p>Data Structures and Algorithms, Discrete Math, Calculus, Intro to Web Science.</p>
+    <section id="about" class="about wrap" aria-labelledby="about-title">
+      <div class="about-intro reveal">
+        <span class="kicker">02 / A little about me</span>
+        <h2 id="about-title" class="title">Curious by default.</h2>
+        <p>I’m a computer science student at Cal Poly Pomona. My projects start with everyday friction: too many tabs, repetitive tasks, or a spreadsheet that could tell a better story.</p>
+        <p class="motto">Build something useful. Learn something new.</p>
+      </div>
+      <div class="facts">
+        <div class="fact reveal">
+          <h3>Education</h3>
+          <strong>Cal Poly Pomona</strong>
+          <p class="fact-meta">B.S. Computer Science · 2025 to present</p>
+          <p>GPA: 3.87</p>
         </div>
-        <div class="col reveal">
-          <h3 class="col-head">Skills</h3>
-          <p class="lead">Python, Java, JavaScript, HTML, CSS, SQL</p>
-          <p>Flask, requests</p>
-          <p>Git, GitHub Actions, SQLite, Gmail API</p>
+        <div class="fact reveal">
+          <h3>Beyond the keyboard</h3>
+          <strong>Server · Pho N Mor</strong>
+          <p class="fact-meta">Chino Hills · 2025 to present</p>
+          <p>Serving during peak periods of 100+ diners and helping train new hires.</p>
         </div>
-        <div class="col reveal">
-          <h3 class="col-head">Work</h3>
-          <p class="lead">Server at Pho N Mor</p>
-          <p>Chino Hills, 2025 to present.</p>
-          <p>Runs service for 100+ diners at peak and trains new hires.</p>
+        <div class="fact reveal">
+          <h3>What I build with</h3>
+          <ul class="stack" translate="no" aria-label="Skills">
+            <li>Python</li><li>Java</li><li>JavaScript</li><li>SQL</li><li>HTML</li><li>CSS</li><li>Flask</li><li>SQLite</li><li>Git</li><li>GitHub Actions</li>
+          </ul>
+        </div>
+        <div class="fact reveal">
+          <h3>What’s next</h3>
+          <strong>Summer 2027</strong>
+          <p>Looking for a software engineering internship and opportunities to build useful things with a team.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer id="contact" class="contact">
+  <footer id="contact" class="contact" aria-labelledby="contact-title">
     <div class="wrap contact-grid">
-      <div class="contact-copy">
-        <h2 class="reveal">Contact me</h2>
-        <p class="contact-note reveal">Open to Summer Internships.</p>
+      <div class="contact-copy reveal">
+        <span class="kicker">03 / Let’s connect</span>
+        <h2 id="contact-title" class="title">Contact me</h2>
+        <p class="contact-note">Open to Summer Internships.</p>
+        <button class="email-copy" type="button" data-copy-email aria-label="Copy email address phuc.h0168094@gmail.com">
+          <span class="email-text"><span translate="no">phuc.h0168094@gmail.com</span><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg></span>
+          <span class="email-done" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Copied</span>
+        </button>
+        <ul class="footer-links">
+          <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=phuc.h0168094@gmail.com" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-google"/></svg>Gmail</a></li>
+          <li><a href="https://outlook.live.com/mail/0/deeplink/compose?to=stevenguyen07@outlook.com" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-outlook"/></svg>Outlook</a></li>
+          <li><a href="https://github.com/stjp777" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/steve-nguyen-b52b353a7/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+        </ul>
       </div>
       <figure class="contact-figure reveal">
         <img class="contact-photo" src="assets/fox-and-cat.webp" alt="A plush fox and a black cat figurine on my desk" width="960" height="960" loading="lazy">
         <details class="egg">
           <summary>Why a fox and a cat?</summary>
-          <p>These two live on my desk and keep me company while I code, so they became the site's mascots. The themes come from them too: paper and ink from the black cat, rust from the fox's fur, and night for the late sessions. Try switching themes and watch the fox and cat hop, or move your mouse near the cat down here.</p>
+          <p>These two live on my desk and keep me company while I code, so they became the site’s mascots. The themes come from them too: paper and ink from the black cat, rust from the fox’s fur, and night for the late sessions. Try switching themes and watch the fox and cat hop, or move your mouse near the cat down here.</p>
         </details>
       </figure>
     </div>
-
-    <div class="wrap sign-off reveal">
-      <span class="footer-name">Steve Nguyen</span>
-      <button class="email-copy" type="button" data-copy-email aria-label="Copy email address phuc.h0168094@gmail.com"><span class="email-text">phuc.h0168094@gmail.com</span><span class="email-done" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Copied</span></button>
-      <ul class="footer-links">
-        <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=phuc.h0168094@gmail.com" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-google"/></svg>Gmail</a></li>
-        <li><a href="https://outlook.live.com/mail/0/deeplink/compose?to=stevenguyen07@outlook.com" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-outlook"/></svg>Outlook</a></li>
-        <li><a href="https://github.com/stjp777" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/steve-nguyen-b52b353a7/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
-      </ul>
-      <small>© 2026</small>
+    <div class="wrap bottom">
+      <small>© 2026 Steve Nguyen</small>
+      <svg class="peek" viewBox="0 0 48 30" width="96" height="60" aria-hidden="true">
+        <path class="cat-body" d="M7 5 L16 14 Q24 11 32 14 L41 5 L42 23 Q42 39 24 39 Q6 39 6 23 Z"/>
+        <g class="pupils"><circle class="cat-dot" cx="17" cy="23" r="2"/><circle class="cat-dot" cx="31" cy="23" r="2"/></g>
+        <path class="cat-line" d="M21 29 Q22.5 31 24 29 Q25.5 31 27 29 M3 26 L12 27 M3 30 L12 29 M45 26 L36 27 M45 30 L36 29"/>
+      </svg>
     </div>
-
-    <svg class="peek" viewBox="0 0 48 30" width="112" height="70" aria-hidden="true">
-      <path class="cat-body" d="M7 5 L16 14 Q24 11 32 14 L41 5 L42 23 Q42 39 24 39 Q6 39 6 23 Z"/>
-      <g class="pupils"><circle class="cat-dot" cx="17" cy="23" r="2"/><circle class="cat-dot" cx="31" cy="23" r="2"/></g>
-      <path class="cat-line" d="M21 29 Q22.5 31 24 29 Q25.5 31 27 29 M3 26 L12 27 M3 30 L12 29 M45 26 L36 27 M45 30 L36 29"/>
-    </svg>
   </footer>
 
   <button class="to-top" type="button" aria-label="Back to top"><svg class="ico" aria-hidden="true"><use href="#i-up"/></svg></button>
   <p class="toast" role="status" aria-live="polite"></p>
 
-  <script src="main.js?v=10" defer></script>
+  <script src="main.js?v=20" defer></script>
 </body>
 </html>

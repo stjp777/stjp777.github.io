@@ -28,28 +28,10 @@ buttons.forEach(b => b.addEventListener('click', () => {
 }));
 applyTheme(root.dataset.theme, false);
 
-// Email links open Gmail compose in a new tab and also copy the address,
-// so visitors who use another mail app can just paste it.
+// Screen-reader-only status line.
 const toast = document.querySelector('.toast');
-let toastTimer;
-document.querySelectorAll('[data-email]').forEach(a => a.addEventListener('click', () => {
-  const address = 'phuc.h0168094@gmail.com';
-  const show = msg => {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
-  };
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(address).then(
-      () => show('Email address copied. Opening Gmail…'),
-      () => show('Opening Gmail…'));
-  } else {
-    show('Opening Gmail…');
-  }
-}));
 
-// Footer email: click to copy; the address briefly turns into a "Copied" pill in place.
+// Contact email: click to copy; the address briefly turns into "Copied" in place.
 document.querySelectorAll('[data-copy-email]').forEach(b => {
   let timer;
   b.addEventListener('click', () => {
