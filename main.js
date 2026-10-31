@@ -5,7 +5,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 const greeting = document.querySelector('.greeting');
 if (greeting) {
   const h = new Date().getHours();
-  greeting.textContent = (h >= 5 && h < 12 ? 'Good morning! ' : h >= 12 && h < 17 ? 'Good afternoon! ' : 'Good evening! ');
+  greeting.textContent = (h >= 5 && h < 12 ? 'Good morning, ' : h >= 12 && h < 17 ? 'Good afternoon, ' : 'Good evening, ');
 }
 
 // Theme switcher: remembers the visitor's pick.
