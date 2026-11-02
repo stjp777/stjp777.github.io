@@ -29,7 +29,7 @@
       document.documentElement.classList.add('js');
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=23">
+  <link rel="stylesheet" href="styles.css?v=24">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -77,7 +77,7 @@
         <p class="lede">I build tools that do the boring part, from finding internships to turning data into something you can actually use.</p>
         <div class="ctas">
           <a class="btn btn-primary" href="#work">Explore my work <span class="arw-down" aria-hidden="true">↓</span></a>
-          <a class="btn" href="assets/steve-nguyen-resume.pdf?v=2" target="_blank" rel="noopener">Résumé <span class="arw" aria-hidden="true">↗</span></a>
+          <a class="btn" href="assets/steve-nguyen-resume.pdf?v=3" target="_blank" rel="noopener">Résumé <span class="arw" aria-hidden="true">↗</span></a>
         </div>
         <p class="status"><span class="status-dot" aria-hidden="true"></span><span><span class="greeting"></span>I’m currently looking for Summer 2027 Internships</span></p>
       </div>
@@ -169,6 +169,61 @@
         </div>
       </article>
 
+      <p class="group-label reveal">Team projects with the Software Engineering Association at Cal Poly Pomona</p>
+      <div class="row">
+        <article class="card reveal">
+          <div class="art art-iris" translate="no" aria-label="IRIS benchmark numbers and her eight moods">
+            <dl class="bench-stats">
+              <div><dt>model</dt><dd>qwen3.5:9b</dd></div>
+              <div><dt>reply</dt><dd>1.0 s</dd></div>
+              <div><dt>speed</dt><dd>44 tok/s</dd></div>
+              <div><dt>memory</dt><dd>6.2 GB</dd></div>
+            </dl>
+            <ul class="moods" aria-label="Moods">
+              <li>neutral</li><li class="on">happy</li><li>sad</li><li>scared</li><li>angry</li><li>defensive</li><li>warm</li><li>curt</li>
+            </ul>
+          </div>
+          <h3>IRIS <span class="tag-inline">In progress</span></h3>
+          <p>A friendly AI companion that runs entirely on your own computer. I’m on the LLM team: choosing the model, making it fast, and giving IRIS moods and a personality.</p>
+          <ul class="stack" translate="no" aria-label="Built with"><li>Python</li><li>Ollama</li><li>Qwen 3.5</li></ul>
+          <p class="card-links push"><span class="private-note">Private team repo</span></p>
+          <details class="more">
+            <summary>My part so far</summary>
+            <ul>
+              <li>Found why replies took 48 to 59 seconds and came back empty: the model spent its whole budget on hidden reasoning. Turning that off brought replies to about 1 second.</li>
+              <li>Wrote a benchmark script that tracks reply time, speed and memory use.</li>
+              <li>Built an 8-mood system that mixes keyword rules with an LLM judge, and shortened the personality prompt to 1,073 tokens to leave room for long-term memory.</li>
+              <li>6 pull requests merged so far.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <div class="art art-api" translate="no" aria-label="The backend endpoints built so far">
+            <div class="routes">
+              <div><b>GET</b> /health <i>200 ok</i></div>
+              <div><b>GET</b> /health/db <i>200 ok</i></div>
+              <div><b>GET</b> /me <i>200 profile</i></div>
+            </div>
+            <span class="art-arrow" aria-hidden="true">→</span>
+            <div class="db"><strong>Supabase</strong><span>Postgres + pgvector</span></div>
+          </div>
+          <h3>Suggestor <span class="tag-inline">In progress</span></h3>
+          <p>A recommender that learns your taste from swipes, starting with restaurants. I’m the team’s backend developer: the FastAPI service and the Supabase Postgres database.</p>
+          <ul class="stack" translate="no" aria-label="Built with"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Supabase</li></ul>
+          <p class="card-links push"><a href="https://github.com/ahmedelngr/Suggestor" target="_blank" rel="noopener">Source code <span class="arw" aria-hidden="true">↗</span></a></p>
+          <details class="more">
+            <summary>My part so far</summary>
+            <ul>
+              <li>Connected the FastAPI service to the Supabase Postgres database, with a health check that confirms the connection.</li>
+              <li>Built a signed-in <code>/me</code> endpoint that checks the user’s Supabase token and returns the right error for expired tokens or missing profiles, covered by 8 tests.</li>
+              <li>Up next: saving swipes and building the personal feed.</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+
+      <p class="group-label reveal">Personal and class projects</p>
       <div class="row">
         <article class="card reveal">
           <div class="art art-agent" translate="no" aria-label="Diagram: a prompt goes to Gemini, which loops through inspect, act and observe using four tools">
