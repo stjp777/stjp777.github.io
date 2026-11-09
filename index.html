@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Steve Nguyen</title>
-  <meta name="description" content="Steve Nguyen, Computer Science student at Cal Poly Pomona. Projects in Python, Flask, and AI agents.">
+  <meta name="description" content="Steve Nguyen, Computer Science student at Cal Poly Pomona. Projects in Python, search and AI.">
   <meta property="og:title" content="Steve Nguyen">
   <meta property="og:description" content="Useful things, thoughtfully built. CS student at Cal Poly Pomona.">
   <meta property="og:url" content="https://stjp777.github.io/">
@@ -77,7 +77,7 @@
         <p class="lede">I build tools that do the boring part, from finding internships to turning data into something you can actually use.</p>
         <div class="ctas">
           <a class="btn btn-primary" href="#work">Explore my work <span class="arw-down" aria-hidden="true">↓</span></a>
-          <a class="btn" href="assets/steve-nguyen-resume.pdf?v=4" target="_blank" rel="noopener">Résumé <span class="arw" aria-hidden="true">↗</span></a>
+          <a class="btn" href="assets/steve-nguyen-resume.pdf?v=5" target="_blank" rel="noopener">Résumé <span class="arw" aria-hidden="true">↗</span></a>
         </div>
         <p class="status"><span class="status-dot" aria-hidden="true"></span><span><span class="greeting"></span>I’m currently looking for Summer 2027 Internships</span></p>
       </div>
@@ -226,18 +226,22 @@
       <p class="group-label reveal">Personal and class projects</p>
       <div class="row">
         <article class="card reveal">
-          <div class="art art-agent" translate="no" aria-label="Diagram: a prompt goes to Gemini, which loops through inspect, act and observe using four tools">
-            <div class="agent-loop"><strong>prompt</strong> → <span>Gemini</span><br>inspect · act · observe<br><span>↺ inspect output</span></div>
+          <div class="art art-agent" translate="no" aria-label="Diagram: a query goes through keyword and semantic search, rank fusion and reranking, then becomes a cited answer">
+            <div class="agent-loop"><strong>query</strong> → <span>"talking bear"</span><br>keyword + meaning<br><span>↺ best matches first</span></div>
             <span class="art-arrow" aria-hidden="true">→</span>
-            <div class="agent-tools"><div>get_files_info</div><div>get_file_content</div><div>write_file</div><div>run_python_file</div></div>
+            <div class="agent-tools"><div>bm25 keyword</div><div>semantic chunks</div><div>rrf fusion</div><div>rerank</div><div>cited answer</div></div>
           </div>
-          <h3>Python AI Coding Agent</h3>
-          <p>A hands-on look at how an AI agent works: give it a prompt, connect it to tools, and let it work through a coding task.</p>
-          <ul class="stack" translate="no" aria-label="Built with"><li>Python</li><li>Gemini API</li><li>Tool calling</li></ul>
-          <p class="card-links push"><a href="https://github.com/stjp777/python-ai-agent" target="_blank" rel="noopener">Source code <span class="arw" aria-hidden="true">↗</span></a></p>
+          <h3>RAG Search Engine</h3>
+          <p>A search engine for any JSON dataset. It combines keyword and meaning-based search, reranks the results, and can turn them into a cited answer with an LLM.</p>
+          <ul class="stack" translate="no" aria-label="Built with"><li>Python</li><li>Sentence Transformers</li><li>CLIP</li><li>OpenRouter</li></ul>
+          <p class="card-links push"><a href="https://github.com/stjp777/rag-search-engine" target="_blank" rel="noopener">Source code <span class="arw" aria-hidden="true">↗</span></a></p>
           <details class="more">
-            <summary>Inside the agent loop</summary>
-            <p>The Gemini loop inspects, reads, and writes files and runs Python through four dedicated tools, then checks its own output before it stops.</p>
+            <summary>How a search works</summary>
+            <ul>
+              <li>BM25 finds the documents that share your words, and sentence-transformer embeddings find the ones that share your meaning.</li>
+              <li>Reciprocal Rank Fusion merges both lists, then an LLM or a local cross-encoder reranks the top results.</li>
+              <li>The top results become an answer with citations. It can also search by image with CLIP, and it is checked with precision and recall against a test set, plus 47 tests in CI.</li>
+            </ul>
           </details>
         </article>
 
